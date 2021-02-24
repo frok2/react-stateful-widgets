@@ -27,13 +27,16 @@ export const listOfAwesome = [
 
 
 export default function Programmers() {
+  
   // We'll have to use the state hook twice, as we need two slices of state.
   // The programmers list on the one hand, and the id of the featured programmer on the other.
+
 
   const [programmerList, setProgrammerList] = useState(listOfAwesome)
   const [featuredID, setFeaturedID] = useState()
 
   let color = "royalblue"
+
 
   const getNameOfFeatured = () => {
     // Leave this for last!
@@ -41,9 +44,9 @@ export default function Programmers() {
     // It's going to utilize both slices of state to return the _name_ of the featured dev.
     // The beauty of closures is that we can "see" both slices of state from this region
     // of the program, without needing to inject the information through arguments.
+
   
     return programmerList[(featuredID - 1)].name
-
   };
 
   if (featuredID){
@@ -67,6 +70,7 @@ export default function Programmers() {
           programmerList.map(dev =>
             <div className='programmer' key={dev.id}>
               {dev.name} <button onClick={() => { setFeaturedID(dev.id) }}>Feature</button>
+
             </div>
           )
         }

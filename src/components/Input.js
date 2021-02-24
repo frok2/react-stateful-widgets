@@ -35,12 +35,15 @@ STEP 6:
 */
 
 
+
 import React, { useState } from 'react'; /* STEP 0 */
 let newColor = 'green';
+
 export default function Input() {
   /* STEP 1 */
 
   const [inputValue, setInputValue] = useState('')
+
  
 
   const changeInput = evt => {
@@ -48,12 +51,14 @@ export default function Input() {
     // Log out the synthetic event object 'evt' and see for yourself.
     const { value } = evt.target;
     setInputValue(value)
-  
+
+
 
     /* STEP 4 */
   };
   const reset = () => {
     /* STEP 5 */
+
     setInputValue('')
   };
 
@@ -70,7 +75,6 @@ export default function Input() {
     fontSize: '1.5em',
     marginBottom: '0.3em',
     color: `${newColor}` /* STEP 2 */
-  
   };
 
  
@@ -80,6 +84,7 @@ export default function Input() {
       <h2>Input</h2>
       <div id='output' style={style}>{inputValue.toUpperCase()}</div> {/* STEP 3 */}
       <div>
+
         <input id='input' style={style} type='text' onChange={changeInput} value={inputValue} /> {/* STEP 6 */}
         <button id='resetInput' onClick={reset}>Reset</button>
       </div>
