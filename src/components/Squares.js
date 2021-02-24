@@ -25,7 +25,8 @@ export default function Squares() {
   // of the currently active square. On page load there's no active square,
   // so the value of 'activeSquare' should be null.
 
-  const [squares, setSquareIDs] = useState(listOfSquareIds)
+
+  const [squares, setSquares] = useState(listOfSquareIds)
   const [activeSquare, setActiveSquare] = useState(null)
 
   const getClassName = id => {
@@ -35,13 +36,10 @@ export default function Squares() {
     // Right-click and "inspect element" on the square to see its effect.
 
     if (id === activeSquare){
-      return 'active'
+      return " active"
     }
-    else{
-      return ''
-    }
+    return ''
 
-    
   };
 
   const markActive = id => {
@@ -50,12 +48,11 @@ export default function Squares() {
     // (unless it already is, in which case we should reset
     // the currently active square id back to initial state).
 
-    if (activeSquare === id){
-      setActiveSquare(null)
+
+    if (id !== activeSquare){
+      setActiveSquare(id)
     }
-    else {
-    setActiveSquare(id)
-    }
+    console.log(activeSquare)
   };
 
   return (

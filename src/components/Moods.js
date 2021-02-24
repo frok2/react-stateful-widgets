@@ -36,20 +36,22 @@ const sadMood = 'Rather sad';
 
 export default function Moods() {
   /* STEP 1 */
+  const [mood, setMood] = useState(initialMood)
 
   const [mood, setMood] = useState('Not sure how I feel')
 
   const makeHappy = () => {
     /* STEP 4 */
-    setMood('I am happy')
+
+    setMood(happyMood)
   };
   const makeSad = () => {
     /* STEP 5 */
-    setMood('I am sad')
+    setMood(sadMood)
   };
   const reset = () => {
     /* STEP 6 */
-    setMood('Not sure how I feel')
+    setMood(initialMood)
   };
 
   let color;
@@ -64,7 +66,9 @@ export default function Moods() {
   const style = {
     fontSize: '1.5em',
     marginBottom: '0.3em',
-    color: `${color}`, /* STEP 2 */
+
+    color: `${mood}` === happyMood ? "royalblue" : "crimson", /* STEP 2 */
+
   };
 
   return (
