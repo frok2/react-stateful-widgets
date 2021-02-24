@@ -34,7 +34,7 @@ export default function Squares() {
     // as the argument matches the active square in state, empty string otherwise.
     // Right-click and "inspect element" on the square to see its effect.
     if (id === activeSquare){
-      return activeSquare
+      return " active"
     }
     return ''
   };
